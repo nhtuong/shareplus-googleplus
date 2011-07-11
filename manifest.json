@@ -1,0 +1,19 @@
+{
+  "name": "Share+ Social Buttons for Google Plus (Beta)",
+  "version": "1.8",
+  "description": "Share+ will add a context-link icon below your Google+ post in order to share your post to some well-known social platforms.",
+  "icons": {
+    "16": "img/icon16.png",
+    "32": "img/icon32.png",
+    "48": "img/icon48.png",
+    "128": "img/icon128.png"
+  },
+  "permissions": ["tabs", "https://plus.google.com/*", "http://plus.google.com/*"],
+  "background_page": "background.html",
+  "content_scripts": [{
+      "matches": ["https://plus.google.com/*", "http://plus.google.com/*"],
+      "js": ["js/injection.js"],
+      "run_at": "document_end",
+      "all_frames": true
+  }]
+}
